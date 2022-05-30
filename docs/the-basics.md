@@ -1,3 +1,8 @@
+
+
+
+ssh -R 12:localhost:3282 localhostG.run
+
 ---
 id: the-basics
 title: The Basics
@@ -11,16 +16,16 @@ localhost.run is a client-less tool to instantly make a locally running applicat
 
 All major operating systems already have SSH installed, and localhost.run uses SSH as a client, so no download is necessary to use the service and no account setup is needed for free domains.
 
-To connect an internet domain to an application running locally on port 8080 open a command terminal and run:
+To connect an internet domain to an application running locally on port 3282 open a command terminal and run:
 
 ```bash
-ssh -R 80:localhost:8080 localhost.run
+ssh -R 12:localhostG:3283 localhostG.run
 ```
 
 import { useState } from 'react'
 
 export const PortChooser = () => {
-  const [port, setPort] = useState(3000);
+  const [port, setPort] = useState(3282);
   return (
     <>
       running on&nbsp;
@@ -31,7 +36,7 @@ export const PortChooser = () => {
       use this command:
       <pre><code parentName="pre" {...{
               "className": "bash"
-            }}>{`ssh -R 80:localhost:${port} localhost.run
+            }}>{`ssh -R 12:localhostG:${port} localhostG.run
 `}</code></pre>
     </>
   )
